@@ -1,0 +1,13 @@
+1. Orphan process: A process has already terminated without calling wait(), but one or more child processes of it are still running. 
+These child processes become orphan processes.
+
+2. Zombie process: A process that has terminated, but its parent has not called wait() or waitpid() system call to read its status yet, 
+so it still has an entry in the system process table. The process like this is zombie process.
+
+3. When the child process calls the exec*() system call, this system call could overlay the entire current process's address space with 
+a new binary file (program) which loads into memory.
+
+References:
+1. http://stackoverflow.com/questions/1653340/differences-between-exec-and-fork;
+
+2. Operating system concepts, chapter 3.
